@@ -944,7 +944,7 @@ def identify_leading_indicators(correlation_matrix,target_indicator="ACC_MM_ACCO
 
     return predictors
 
-def plot_event_timeline(events_df,date_column="observation_date",event_column="event"):
+def plot_event_timeline(events_df,date_column="observation_date",event_column="category"):
     """
     Plot all cataloged events on a timeline.
     """
@@ -972,7 +972,7 @@ def plot_event_timeline(events_df,date_column="observation_date",event_column="e
 
     plt.title("Ethiopia Financial Inclusion Events Timeline")
 
-    plt.xlabel("Date")
+    plt.xlabel("observation_date")
 
     plt.grid(True)
 
@@ -989,8 +989,8 @@ def plot_indicator_with_events(
         indicator_code,
         date_column="observation_date",
         value_column="value_numeric",
-        event_date_column="date",
-        event_column="event"):
+        event_date_column="observation_date",
+        event_column="indicator"):
     """
     Plot indicator trend and overlay events.
     """
